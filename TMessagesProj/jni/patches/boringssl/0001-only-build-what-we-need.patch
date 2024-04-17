@@ -217,7 +217,7 @@ index 0fb532eae..f5cab9807 100644
 +++ b/ssl/CMakeLists.txt
 @@ -44,21 +44,3 @@ add_library(
  add_dependencies(ssl global_target)
- 
+
  target_link_libraries(ssl crypto)
 -
 -add_executable(
