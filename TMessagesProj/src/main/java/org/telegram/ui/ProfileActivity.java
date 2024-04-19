@@ -306,6 +306,7 @@ import cn.hutool.core.util.StrUtil;
 import kotlin.Unit;
 import libv2ray.Libv2ray;
 import tw.nekomimi.nekogram.BackButtonMenuRecent;
+import tw.nekomimi.nekogram.helpers.ProfileDateHelper;
 import tw.nekomimi.nekogram.helpers.SettingsHelper;
 import tw.nekomimi.nekogram.helpers.SettingsSearchResult;
 import tw.nekomimi.nekogram.transtale.popupwrapper.AutoTranslatePopupWrapper;
@@ -9806,7 +9807,11 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             int finalDc = dc;
             idTextView.setOnClickListener(v -> {
                 BottomBuilder builder = new BottomBuilder(getParentActivity());
-                builder.addTitle(finalId + "");
+                if (finalId == userId) {
+                    builder.addTitle(finalId + "", ProfileDateHelper.getUserTime(finalId));
+                } else {
+                    builder.addTitle(finalId + "");
+                }
                 builder.addItem(LocaleController.getString("Copy", R.string.Copy), R.drawable.msg_copy, __ -> {
                     AlertUtil.copyAndAlert(finalId + "");
                     return Unit.INSTANCE;
