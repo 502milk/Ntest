@@ -13,6 +13,7 @@
 [submodule "ss-rust/src/main/rust/shadowsocks-rust"]
 	path = ss-rust/src/main/rust/shadowsocks-rust
 	url = https://github.com/shadowsocks/shadowsocks-rust.git
+        branch = release
 
 [submodule "shadowsocksr-libev"]
 	path = ssr-libev/src/main/jni/shadowsocks-libev
