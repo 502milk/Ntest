@@ -282,6 +282,11 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - name: Install libunwind 
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libunwind-dev
       - name: Setup Android SDK Tools
         uses: android-actions/setup-android@v3
         if: steps.cache.outputs.cache-hit != 'true'
