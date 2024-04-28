@@ -176,7 +176,7 @@ android {
             jniDebuggable true
             multiDexEnabled true
             zipAlignEnabled true
-            signingConfig signingConfigs.release
+            signingConfig null
             ndk.debugSymbolLevel = "FULL"
         }
 
@@ -189,7 +189,7 @@ android {
             zipAlignEnabled true
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             matchingFallbacks = ["release", "debug"]
-            signingConfig signingConfigs.release
+            signingConfig null
         }
     }
 
