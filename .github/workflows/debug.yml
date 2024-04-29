@@ -254,7 +254,7 @@ jobs:
           echo "ndk.dir=${ANDROID_HOME}/ndk/21.4.7075529" >> local.properties
       - name: Compile libunwind for aarch64-linux-android
         if: steps.cache.outputs.cache-hit != 'true'
-        run: .github/scripts/build-libunwind.sh
+        run: chmod +x .github/scripts/build-libunwind.sh
       - name: Install Rust
         if: steps.cache.outputs.cache-hit != 'true'
         run: ./run init action shadowsocks
