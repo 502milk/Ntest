@@ -257,9 +257,7 @@ jobs:
         run: chmod +x .github/scripts/build-libunwind.sh
       - name: Install Rust
         if: steps.cache.outputs.cache-hit != 'true'
-        run: ./run init action shadowsocks
-      - name: Fix warnings
-        run: cargo fix --lib -p shadowsocks-service       
+        run: ./run init action shadowsocks   
       - name: Native Build
         if: steps.cache.outputs.cache-hit != 'true'
         run: ./run libs shadowsocks
