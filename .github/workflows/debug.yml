@@ -257,14 +257,11 @@ jobs:
         run: chmod +x .github/scripts/build-libunwind.sh
       - name: Install Rust
         if: steps.cache.outputs.cache-hit != 'true'
-        run: ./run init action shadowsocks
-      - name: debug logs
-        env:
-          ACTIONS_SETP_DEBUG: true
-        run: |
-          echo "debug logs"     
+        run: ./run init action shadowsocks   
       - name: Native Build
         if: steps.cache.outputs.cache-hit != 'true'
+        env: 
+          ACTIONS_SETP_DEBUG: true
         run: ./run libs shadowsocks
   shadowsocksr:
     name: Native Build (ShadowsocksR)
